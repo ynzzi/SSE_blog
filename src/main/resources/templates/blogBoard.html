@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${user.name} + '님의 블로그'"></title>
+<link rel="stylesheet" href="/css/blogBoard.css">
+</head>
+<body>
+
+<h1>
+    <span class="hearts">♥ ♥ ♥</span>
+    <span th:text="${user.name} + '님의 블로그'"></span>
+    <span class="hearts">♥ ♥ ♥</span>
+</h1>
+
+<a href="/" class="back-btn">←</a>
+
+<div style="text-align: right; margin: 1rem 0;">
+	    <form th:action="@{/blog/{id}/subscribe(id=${user.id})}" method="post">
+	        <button class="subscribe-btn" 
+	                th:text="${isSubscribed ? '구독중' : '구독'}"
+	                th:if = "${!checkMe}">
+	        </button>
+	    </form>
+</div>
+<hr>
+
+<table>
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성일</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="post, stat : ${board}">
+            <td th:text="${stat.count}"></td>
+            <td th:text="${post.title}"></td>
+            <td th:text="${post.content}"></td>
+            <td th:text="${#temporals.format(post.regDate, 'yyyy-MM-dd HH:mm')}"></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

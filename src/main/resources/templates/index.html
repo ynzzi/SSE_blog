@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 1rem;
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+    }
+
+    .board-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); /* 한 줄에 5개 */
+        gap: 1rem;
+    }
+
+    .board-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 1rem;
+        background: #fafafa;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+        transition: box-shadow 0.2s;
+    }
+
+    .board-card:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .board-card h3 {
+        font-size: 1rem;
+        font-weight: bold; /* 제목 굵게 */
+        margin: 0.5rem 0;
+    }
+
+    .board-card h4 {
+        font-size: 0.875rem;
+        color: #555;
+
+        /* 2줄 말줄임 */
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .board-card p {
+        color: #555;
+        font-size: 0.875rem;
+    }
+
+    @media (max-width: 1200px) {
+        .board-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    @media (max-width: 900px) {
+        .board-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 600px) {
+        .board-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+</style>
+
+</head>
+<body>
+<h1>게시물</h1>
+<hr>
+
+<div class="board-grid">
+    <div class="board-card" th:each="board : ${list}">
+        <p th:text="${board.writer.username}">작성자</p>
+        <h3 th:text="${board.title}">제목</h3>
+        <h4 th:text="${board.content}">제목</h4>
+    </div>
+</div>
+
+</body>
+</html>

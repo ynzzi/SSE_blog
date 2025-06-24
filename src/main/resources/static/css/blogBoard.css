@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+    body {
+        background: #fff7fb; /* 연핑크 배경 */
+        font-family: 'Comic Sans MS', Arial, sans-serif;
+        padding: 2rem 1rem;
+        position: relative;
+    }
+    h1 {
+        text-align: center;
+        color: #ff7bbf;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+    .back-btn {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 1.5rem;
+        color: #ff7bbf;
+        text-decoration: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+    .back-btn:hover {
+        background: #ffeef8;
+    }
+    .subscribe-btn {
+        padding: 0.5rem 1rem;
+        background-color: #ff7bbf;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 2px 6px rgba(255,182,215,0.3);
+        font-size: 0.9rem;
+        transition: background 0.2s;
+    }
+    .subscribe-btn:hover {
+        background-color: #ff5699;
+    }
+    hr {
+        border: none;
+        border-top: 2px dashed #ffb3d9;
+        margin: 1rem 0;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-radius: 1rem;
+        overflow: hidden;
+    }
+    th, td {
+        padding: 0.75rem;
+        text-align: left;
+    }
+    th {
+        background-color: #ffeef8;
+        color: #ff7bbf;
+    }
+    td {
+        background: #ffffff;
+        border-bottom: 1px solid #ffe4f3;
+        color: #444;
+    }
+    tr:hover td {
+        background: #ffeef8;
+    }
+    
+     /* 하트 애니메이션 */
+    .hearts {
+        display: inline-block;
+        vertical-align: middle;
+        color: #ff7bbf;
+        font-size: 1.5rem;
+        animation: blink 2s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+        0%, 100% { opacity: 0.2; }
+        50% { opacity: 1; }
+    }

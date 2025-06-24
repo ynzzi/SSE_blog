@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Blog Users</title>
+<link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+<a href="/mypage" class="mypage-btn">MyPage</a>
+<h1>B l o g</h1>
+<hr>
+
+<div class="user-list">
+    <!-- 유저 리스트 반복 -->
+    <a th:each="user : ${users}"
+       th:href="@{/blog/{id}(id=${user.id})}"
+       class="user-box">
+        <img th:src="${user.imageUrl}"
+             alt="User Image"
+             onerror="this.src='https://via.placeholder.com/80';">
+        <h3 th:text="${user.username}">Username</h3>
+        <p th:text="${user.intro}">소개글</p>
+    </a>
+</div>
+
+</body>
+</html>

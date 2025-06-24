@@ -1,0 +1,147 @@
+@charset "UTF-8";
+
+    body {
+        background: linear-gradient(135deg, #ffeef8, #fff7fb);
+        font-family: 'Comic Sans MS', Arial, sans-serif;
+        padding: 2rem 1rem;
+        position: relative;
+        overflow-x: hidden;
+    }
+
+    /* 배경 떠다니는 하트들 */
+    body::before, body::after {
+        content: "💖";
+        position: absolute;
+        opacity: 0.3;
+        font-size: 2rem;
+        animation: floatHearts 8s linear infinite;
+    }
+    body::before {
+        top: 10%;
+        left: 5%;
+        animation-delay: 0s;
+    }
+    body::after {
+        bottom: 10%;
+        right: 5%;
+        animation-delay: 4s;
+    }
+
+    @keyframes floatHearts {
+        0% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+        50% { opacity: 0.6; }
+        100% { transform: translateY(-50px) rotate(360deg); opacity: 0.1; }
+    }
+
+    h1 {
+        text-align: center;
+        color: #ff7bbf;
+        font-size: 2rem;
+        text-shadow: 1px 1px 3px #ffb3d9;
+    }
+
+    hr {
+        border: none;
+        border-top: 2px dashed #ffb3d9;
+        margin: 1rem auto;
+        width: 80%;
+    }
+
+    .user-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .user-box {
+        flex: 1 1 calc(33.333% - 1rem);
+        max-width: calc(33.333% - 1rem);
+        background: #ffffff;
+        border: 2px solid #ffe4f3;
+        border-radius: 1rem;
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        color: #444;
+        box-sizing: border-box;
+        box-shadow: 0 2px 6px rgba(255, 182, 215, 0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /* 박스 안쪽에 떠다니는 반짝이 효과 */
+    .user-box::before {
+        content: "✨";
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        opacity: 0.1;
+        font-size: 2rem;
+        animation: sparkle 6s linear infinite;
+    }
+
+    @keyframes sparkle {
+        0% { opacity: 0.1; transform: translate(0, 0); }
+        50% { opacity: 0.4; transform: translate(50px, 50px); }
+        100% { opacity: 0.1; transform: translate(100px, 100px); }
+    }
+
+    .user-box:hover {
+	    background: #ffeef8;
+	    box-shadow: 0 4px 12px rgba(255, 182, 215, 0.3);
+	    transform: scale(1.05); /* 회전 없음, 살짝 확대만 */
+	}
+
+    .user-box img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 2px solid #ffb3d9;
+        object-fit: cover;
+        margin-bottom: 0.5rem;
+        box-shadow: 0 0 8px rgba(255,182,215,0.2);
+    }
+
+    .user-box h3 {
+        margin: 0.5rem 0;
+        font-size: 1.2rem;
+        color: #ff7bbf;
+    }
+
+    .user-box p {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    @media (max-width: 900px) {
+        .user-box {
+            flex: 1 1 calc(50% - 1rem);
+            max-width: calc(50% - 1rem);
+        }
+    }
+    @media (max-width: 600px) {
+        .user-box {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+    }
+    
+    .mypage-btn {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        padding: 0.5rem 1rem;
+        background: #ff7bbf;
+        color: #fff;
+        border-radius: 8px;
+        text-decoration: none;
+        box-shadow: 0 2px 6px rgba(255, 182, 215, 0.3);
+        transition: background 0.2s;
+        font-size: 1rem;
+    }
+    .mypage-btn:hover {
+        background: #ff5699;
+    }

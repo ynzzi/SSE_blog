@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+body {
+	background: #fff7fb;
+	font-family: 'Comic Sans MS', Arial, sans-serif;
+	padding: 2rem;
+}
+
+h1 {
+	text-align: center;
+	color: #ff7bbf;
+	font-size: 2rem;
+}
+
+hr {
+	border: none;
+	border-top: 2px dashed #ffb3d9;
+	margin: 1rem 0;
+}
+
+h3 {
+	color: #ff7bbf;
+	margin-bottom: 1rem;
+}
+
+.subscribe-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.subscribe-box {
+	width: 200px;
+	background: #ffffff;
+	border: 2px solid #ffe4f3;
+	border-radius: 1rem;
+	padding: 1rem;
+	text-align: center;
+	box-shadow: 0 2px 6px rgba(255, 182, 215, 0.2);
+	transition: background 0.2s;
+}
+
+.subscribe-box:hover {
+	background: #ffeef8;
+}
+
+.subscribe-box img {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 2px solid #ffb3d9;
+	object-fit: cover;
+	margin-bottom: 0.5rem;
+}
+
+.subscribe-box p {
+	margin: 0.25rem 0;
+	color: #444;
+	font-size: 0.9rem;
+}
+
+.subscribe-box .username {
+	color: #ff7bbf;
+	font-weight: bold;
+}
+
+.back-btn {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 1.5rem;
+        color: #ff7bbf;
+        text-decoration: none;
+        padding: 0.25rem 0.5rem;
+        border-radius: 6px;
+        transition: background 0.2s;
+    }
+    .back-btn:hover {
+        background: #ffeef8;
+    }

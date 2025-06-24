@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+    body {
+        background: #ffeef8; /* 연핑크 배경 */
+        font-family: 'Comic Sans MS', Arial, sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-box {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        width: 280px;
+        text-align: center;
+    }
+    h1 {
+        color: #ff7bbf;
+        margin-bottom: 1rem;
+        font-size: 1.8rem;
+    }
+    label {
+        display: block;
+        text-align: left;
+        color: #ff7bbf;
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+    }
+    input[type="text"], input[type="password"] {
+        width: 100%;
+        padding: 0.5rem;
+        border: 2px solid #ff7bbf;
+        border-radius: 0.5rem;
+        margin-top: 0.25rem;
+        box-sizing: border-box;
+        font-size: 0.9rem;
+    }
+    input[type="submit"] {
+        width: 100%;
+        background: #ff7bbf;
+        color: #fff;
+        border: none;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 1rem;
+        font-size: 1rem;
+        transition: background 0.2s;
+    }
+    input[type="submit"]:hover {
+        background: #ff4fa2;
+    }
+    ::placeholder {
+        color: #ffb3d9;
+    }

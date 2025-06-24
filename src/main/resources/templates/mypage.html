@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>MyPage</title>
+<link rel="stylesheet" href="/css/mypage.css">
+
+</head>
+<body>
+
+<a href="/" class="back-btn">←</a>
+
+<h1>MyPage</h1>
+<hr>
+<h3>구독 목록</h3>
+
+<div class="subscribe-list">
+    <div class="subscribe-box" th:each="sub : ${subscriptions}">
+        <!-- 구독한 유저의 이미지 -->
+        <img th:src="${sub.subscribedTo.imageUrl}"
+             alt="User Image"
+             onerror="this.src='https://via.placeholder.com/80';">
+        <!-- 유저네임 -->
+        <p class="username" th:text="${sub.subscribedTo.username}"></p>
+        <!-- 유저 이름 -->
+        <p th:text="${sub.subscribedTo.name}"></p>
+    </div>
+</div>
+
+</body>
+</html>
